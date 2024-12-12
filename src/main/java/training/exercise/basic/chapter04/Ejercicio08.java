@@ -1,4 +1,4 @@
-package exercise.basic.chapter04;
+package training.exercise.basic.chapter04;
 
 import java.time.Month;
 import java.time.format.TextStyle;

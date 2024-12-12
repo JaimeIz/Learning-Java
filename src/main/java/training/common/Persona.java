@@ -1,4 +1,4 @@
-package common;
+package training.common;
 
 import java.util.ArrayList;
 import java.util.Collections;

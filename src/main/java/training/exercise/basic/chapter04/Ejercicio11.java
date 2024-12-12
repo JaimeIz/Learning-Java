@@ -1,4 +1,4 @@
-package exercise.basic.chapter04;
+package training.exercise.basic.chapter04;
 
 import java.io.IOException;
 import java.util.Comparator;
