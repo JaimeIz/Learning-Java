@@ -1,4 +1,4 @@
-package chapter04;
+package exercise.basic.chapter04;
 
 /**
  * <h2>Primer Ejercicio.</h2>
@@ -11,9 +11,8 @@ package chapter04;
 public class Ejercicio01 {
     public static void main(String[] args) {
         try {
-            if (args.length != 2) {
+            if (args.length != 2)
                 throw new Exception("Solo hay que introducir dos argumentos numericos");
-            }
             
             float a = Float.valueOf(args[0]);
             float b = Float.valueOf(args[1]);

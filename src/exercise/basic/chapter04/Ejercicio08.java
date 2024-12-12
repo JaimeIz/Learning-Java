@@ -1,4 +1,4 @@
-package chapter04;
+package exercise.basic.chapter04;
 
 import java.time.Month;
 import java.time.format.TextStyle;
@@ -18,9 +18,8 @@ public class Ejercicio08 {
 
     public static void main(String[] args) {
         try {
-            if (args.length != 1) {
+            if (args.length != 1)
                 throw new Exception("Necesitas introducir el número del mes.");
-            }
 
             int monthNumber = Integer.valueOf(args[0]);
 

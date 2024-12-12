@@ -1,4 +1,4 @@
-package chapter04;
+package exercise.basic.chapter04;
 
 /**
  * <h2>Septimo Ejercicio.</h2>
@@ -15,9 +15,8 @@ public class Ejercicio09 {
 
     public static void main(String[] args) {
         try {
-            if (args.length != 2) {
+            if (args.length != 2)
                 throw new Exception("Necesitas introducir dos numeros. " + HINT);
-            }
 
             int width = Integer.valueOf(args[0]);
             int height = Integer.valueOf(args[1]);

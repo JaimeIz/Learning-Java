@@ -1,4 +1,4 @@
-package chapter04;
+package exercise.basic.chapter04;
 
 /**
  * <h2>Septimo Ejercicio.</h2>
@@ -12,9 +12,8 @@ public class Ejercicio10 {
 
     public static void main(String[] args) {
         try {
-            if (args.length != 1) {
+            if (args.length != 1)
                 throw new Exception("Necesitas introducir un numero.");
-            }
 
             float number = Float.valueOf(args[0]);
             

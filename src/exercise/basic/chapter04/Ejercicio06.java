@@ -1,18 +1,17 @@
-package chapter04;
+package exercise.basic.chapter04;
 
 /**
- * <h2>Septimo Ejercicio.</h2>
- * Igual que antes, pero se deberá imprimir también la palabra de fin.
- *  ¿Qué pasa si no se recibe ninguno?
+ * <h2>Sexto Ejercicio.</h2>
+ * Ahora se tienen que listar todos los argumentos hasta que se encuentre la palabra “fin”,
+ *  pero esta no debe ser incluida en la lista. ¿Qué pasa si no se recibe ninguno?
  * 
  *  @author JaimeIz
  */
-public class Ejercicio07 {
+public class Ejercicio06 {
     public static void main(String[] args) {
         try {
-            if (args.length == 0) {
+            if (args.length == 0)
                 throw new Exception("No se ha introducido ningún argumento");
-            }
 
             String delimiter = "fin";
             
@@ -35,9 +34,9 @@ public class Ejercicio07 {
             System.out.print("Se han recivido los sigientes argumentos: ");
 
             int i = 0;
-            do {
-                System.out.printf("\n\t %d - %s", i, args[i]);
-            } while (!args[i++].equalsIgnoreCase(delimiter));
+            while (!args[i].equalsIgnoreCase(delimiter)) {
+                System.out.printf("\n\t %d - %s", i, args[i++]);
+            }
 
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());

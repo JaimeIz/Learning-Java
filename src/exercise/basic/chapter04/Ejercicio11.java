@@ -1,4 +1,4 @@
-package chapter04;
+package exercise.basic.chapter04;
 
 import java.io.IOException;
 import java.util.Comparator;
@@ -107,12 +107,15 @@ public class Ejercicio11 {
                 System.out.print("Revancha? [y/n]: ");
                 if (!in.next().equalsIgnoreCase("y")) {
                     main_loop = false;
-                    if (player_one.compareTo(player_two) == 1) {
-                        System.out.printf("El jugador '%s' ha ganado con una puntiacion de %d", 
+                    int result = player_one.compareTo(player_two);
+                    if (result > 0) {
+                        System.out.printf("El jugador '%s' ha ganado con una puntiacion de %d!", 
                             player_one.getName(), player_one.getScore());
-                    } else {
-                        System.out.printf("El jugador '%s' ha ganado con una puntiacion de %d", 
+                    } else if (player_one.compareTo(player_two) < 0) {
+                        System.out.printf("El jugador '%s' ha ganado con una puntiacion de %d!", 
                             player_two.getName(), player_two.getScore());
+                    } else {
+                        System.out.println("El juego ha terminado en empate!");    
                     }
                 }
             }
