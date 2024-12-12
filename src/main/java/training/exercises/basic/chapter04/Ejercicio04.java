@@ -1,4 +1,4 @@
-package training.exercise.basic.chapter04;
+package training.exercises.basic.chapter04;
 
 /**
  * <h2>Cuarto Ejercicio.</h2>

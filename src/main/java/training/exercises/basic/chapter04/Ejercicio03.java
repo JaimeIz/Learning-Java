@@ -1,12 +1,14 @@
-package training.exercise.basic.chapter04;
+package training.exercises.basic.chapter04;
 
 /**
- * <h2>Quinto Ejercicio.</h2>
- * Se deberán listar todos los argumentos que se reciban. ¿Qué pasa si no se recibe ninguno?
+ * <h2>Tercer Ejercicio.</h2>
+ *  Se deberá comprobar el número de argumentos que reciba el programa. Si no recibe argumentos,
+ *  se deberá avisar al usuario. Si recibe hasta 4, se deberá indicar cuántos se han recibido.
+ *  Si recibe más, se deberá avisar al usuario.
  * 
  *  @author JaimeIz
  */
-public class Ejercicio05 {
+public class Ejercicio03 {
     public static void main(String[] args) {
         try {
             if (args.length == 0)
@@ -14,14 +16,10 @@ public class Ejercicio05 {
 
             if (args.length == 1)
                 System.out.println("Se ha recivido un argumento");
+            else if (args.length >= 4)
+                System.out.printf("Se han recivido mas de cuatro argumentos");
             else
                 System.out.printf("Se han recivido %d argumentos\n", args.length);
-
-            System.out.print("Se han recivido los sigientes argumentos: ");
-
-            for (int i = 0; i < args.length; i++) {
-                System.out.printf("\n\t %d - %s", i, args[i]);
-            }
 
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
