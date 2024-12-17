@@ -1,0 +1,10 @@
+drop table if exists Animal;
+drop sequence Animal_SEQ;
+drop table if exists Animal;
+drop sequence Animal_SEQ;
+drop table if exists Animal;
+drop sequence Animal_SEQ;
+drop table if exists Animal;
+drop sequence Animal_SEQ;
+drop table if exists Animal;
+drop sequence Animal_SEQ;
