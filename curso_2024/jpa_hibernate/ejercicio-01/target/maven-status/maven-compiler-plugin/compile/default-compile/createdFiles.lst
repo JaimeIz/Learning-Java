@@ -1,5 +1,0 @@
-training\Main.class
-training\service\GenericService.class
-training\service\imp\GenericServiceImp.class
-training\model\Animal.class
-training\service\imp\AnimalServiceImp.class
