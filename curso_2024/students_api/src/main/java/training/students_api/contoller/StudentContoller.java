@@ -18,7 +18,10 @@ import training.students_api.repository.StudentRepository;
 @RestController
 @RequestMapping(value = "/students")
 public class StudentContoller {
-
+    // TODO: Refine all reponses with proper error messages.
+    // TODO: Extract all logic related to the repository to a service.
+    // TODO: Add a verification before updating or creating students to not make java panic with a duped email due to the UNIQUE constraint in the database  
+    
     @Autowired
     StudentRepository repo;
 
