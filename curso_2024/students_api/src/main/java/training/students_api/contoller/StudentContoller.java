@@ -27,6 +27,11 @@ public class StudentContoller {
         return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOne(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Student student) {
         repo.save(student);
