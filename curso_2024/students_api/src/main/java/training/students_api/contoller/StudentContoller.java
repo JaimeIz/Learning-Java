@@ -1,5 +1,8 @@
 package training.students_api.contoller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import training.students_api.model.Student;
-import training.students_api.repository.StudentRepository;
+import training.students_api.service.StudentService;
 
 @RestController
 @RequestMapping(value = "/students")
@@ -23,21 +26,26 @@ public class StudentContoller {
     // TODO: Add a verification before updating or creating students to not make java panic with a duped email due to the UNIQUE constraint in the database  
     
     @Autowired
-    StudentRepository repo;
+    StudentService service;
 
     @GetMapping
-    public ResponseEntity<Object> getAll() {
-        return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Student>> getAll() {
+        return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getOne(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
+    public ResponseEntity<Optional<Student>> getOne(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
     }
 
+    // TODO: Replace return error with something else
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody Student student) {
-        repo.save(student);
+        if (service.getByEmail(student.getEmail()).isPresent()) {
+            return new ResponseEntity<>("[ERROR] An student whit the same email already exists in the database", HttpStatus.BAD_REQUEST);
+        }
+
+        service.create(student);
         return new ResponseEntity<>("Student was created successfully", HttpStatus.CREATED);
     }
 
@@ -45,16 +53,17 @@ public class StudentContoller {
     public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody Student student) {
         student.setId(id);
 
-        if (repo.existsById(id))
-            repo.save(student);
+        service.update(student);
 
         return new ResponseEntity<>("Student was updated successsfully", HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
-        repo.deleteById(id);
-        return new ResponseEntity<Object>("Student was deleted successsfully", HttpStatus.OK);
+        
+        service.removeById(id);
+
+        return new ResponseEntity<>("Student was deleted successsfully", HttpStatus.OK);
     }
 
 }

@@ -20,7 +20,7 @@ spring:
         defer-datasource-initialization: false
 
         hibernate:
-            ddl-auto: create
+            ddl-auto: update
     
         # properties:
         #     jakarta:
